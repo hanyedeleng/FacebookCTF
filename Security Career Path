@@ -13,3 +13,21 @@ jobs into the following roles:
 10. Researcher
 11. Reverse Engineer
 12. Security Architect
+
+
+
+Security Engineering: A guide to building dependable distributed system.
+I 4 environments: a bank, an air force base, a hospital, and the home.  (finance?)
+
+Good security engineering requires four things to come together. 
+There's policy: what you're supposed to achieve.
+There's mechanism: the ciphers, access controls, hardware tamper-resistance and other machinery that you assemble in order to implement 
+the policy.
+There's assurance: the amount of reliance you can place on each particular mechanism.
+There's incentive: the motive that the people guarding and maintaining the system have to do their job properly, and also the motive that
+the attackers have to try to defeat your policy.
+
+Civil engineers learn far more from the one bridge that falls down thatn from the hundred that stay up; exactly the same holds in 
+security engineering.
+
+

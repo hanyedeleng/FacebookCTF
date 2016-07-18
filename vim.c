@@ -130,4 +130,41 @@ Syntax highlighting:
 :syntax off         Turn off syntax highlighting
 :set syntax=perl    Force syntax highlighting
 
+I- Inserts text at the beginning of the text line, not the beginning colum of the vi screen
+a- Appends to the end of the right of the cursor
+A- Appends at the end of the current line
+o- Begins a new line below the current line
+O- Drops the current line and begins a new one in its place
+
+
+Vi replace
+cw- Vi replace a single word from the current cursor position. To replace a whole word, you put the cursor on the first character of the word.
+c$- replace the current line but doesn't extend to change the rest of a wrapped sentence on the screen
+r - vi replace the character under the cursor
+R - replace the text on the same line until ESC is pressed, but it doesn't change text on the next line. Instead, it pushes to ahead of the current changes.
+
+
+dd - vi delete line, regardless of the cursors position on the line
+D - Deletes all text from the cursor position to the end of the line
+dL- Deletes all text from the cursor position to the end of the screen
+dG- Deletes all text from the cursor to the EOF
+d^ Deletes all text from the beginning of the line to the cursor.
+
+
+Copy & paste:
+yy  - copies a line of the text to the unnamed buffer
+3yy - copies 3 lines of text to the unnamed buffer
+yw - copies a word
+3yw
+P - Pastes the contents of the unnamed buffer to the right of the cursor
+p - Pastes the contents of the unnamed buffer to the left of the cursor
+
+
+
+Named and Unnamed buffers:
+ayy -   Plus a line the named buffer(a), overwriting the current contents
+Ayy -   Appends the current line to the buffer
+A3yy-   plus three lines from the current cursor position and appends the lines to the A buffer
+ap  -   pastes the a buffer to the right of the cursor
+
 

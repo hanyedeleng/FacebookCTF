@@ -168,3 +168,48 @@ A3yy-   plus three lines from the current cursor position and appends the lines 
 ap  -   pastes the a buffer to the right of the cursor
 
 
+Options in VI
+set number
+set tabstop=5
+set noh1search
+The above code should be placed in the .exrc file which is located in the users home dir.
+There are more than 60 options available in vi, to view them all type.
+:set all
+:set optionname?
+:set number
+:set nonumber
+
+
+Advanced Vi commands:
+How to run external commands in vi:
+Say for example you want to run "ls -l" inside of vi as you can't remember a file name, you would enter:
+:! ls -l
+
+Joinining lines in Vi
+Back spaces only works on current lines, so to join lines in vi you need to position the curser in either line and press Shift+J
+
+
+Split windows in vi
+When you are editing a file and want to see a different section of the file or even a different file altogether, you can use the following:
+:split
+:vsplit
+To switch between the windows, hit Ctrl+W
+
+
+To edit two files in vi at the same time, open the first file and then type:
+:split file2
+
+To set the height of the split window:
+:15split /blah/file
+The above will split the top 15 lines of the screen and display the contents of the /blah/file.
+To close the split window, take focus by hitting Ctrl+w and then enter :close.
+Or to close all the other spit windows, take focus of the main window and enter:
+:only
+This will close all other windows apart from your window:p
+
+
+Misc/Additional
+U-vi undo, easy to remember, enter U in command line mode to undo the last command.
+:+X+! in command mode this will everything you have done since the last disk write.
+Ctrl+G shows the file name, total number of lines and current position expressed as a percentatge of the total number of lines in the file.
+

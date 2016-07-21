@@ -213,3 +213,55 @@ U-vi undo, easy to remember, enter U in command line mode to undo the last comma
 :+X+! in command mode this will everything you have done since the last disk write.
 Ctrl+G shows the file name, total number of lines and current position expressed as a percentatge of the total number of lines in the file.
 
+Ctrl + E        scroll the window down
+Ctrl + Y        scroll the window up
+Ctrl + F        scroll down one page
+Ctrl + B        scroll up one page
+H               move cursor to the top of the window
+M               move cursor to the middle of the window
+L               move cursor to the bottom of the window
+gg              go to top of file
+
+
+The secret sauce
+text objects and motions
+the DOT command
+macros
+
+w   -words
+s   -sentences
+p   -paragraphs
+t   -tags
+
+Motions
+a   -all
+i   -in
+t   -'tll
+f   -find forward
+F   -find backward
+
+d   -delete
+c   change
+y   yank
+v   visually
+
+
+caw  change the whole world
+daw
+di[     delete all content in []
+da[     delete the whole thing, include []
+
+
+yi)     yank all text inside parentheses
+va"     visually select all inside doublequotes including doublequotes
+.
+
+
+VIM plugins:
+vundel -plugin manager
+nerdtree    file drawer
+ctrlp   fuzzy file finder
+fugitive git tool
+syntastic syntax checker/linter
+
+

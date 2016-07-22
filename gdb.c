@@ -129,4 +129,56 @@ x [/Nuf] expr                   examine memory at address expr; optional format 
 disassem [addr]                 display memory as machine instructions
 
 
-            
+Automatic Display
+display [/f] expr               show value of expr each time program stops [according to format f]
+display                         display all enabled expressions on list
+undisplay n                     remove number(s) n from list of automatically displayed expressions
+disable disp n                  disable display for expression(s) number n
+enable disp n
+info display
+
+
+Expresions
+expr                            an expression in C, C++, or Modula-2 (including function calls), or:
+adr@len                         an array of len elements beginning at addr
+file::nm                        a variable or function nm defined in file
+{type} addr                     read memory at addr as specified type
+$                               most recent displayed value
+$n                              nth displayed value
+$$                              displayed value previous to $
+$$n
+$_
+$var
+
+show values [n]
+show conv
+
+Symbol talble
+info address s
+info func [regex]
+info var [regex]
+whatis [expr]
+ptype [expr]
+ptype type
+
+
+GDB Scripts
+source script
+define cmd
+    command-list
+end
+document end
+    help-text
+end
+
+Signals
+handle signan act
+    print
+    noprint
+    stop
+    nostop
+    pass
+    nopass
+info signals
+
+

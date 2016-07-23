@@ -1,0 +1,28 @@
+Reversing - Screts of Reverse Engineering
+
+The idea is simple: we should develop a solid understanding of low-level
+software, and learn tecniques that will allow us to easily dig into any
+program's binaries and retrieve information.
+
+It's deconstructed
+similar to scientific research that studies natural phenomena.
+
+In some cases source code is available but the original developers who created
+it are unavailable. This book deals specifically with what is commonly referred
+to as binary reverse engineering.
+
+Binary reverse engineering techqiues aim at extracting valuable information
+from programs for which source code is unavailable.
+
+Reverse engineering is often platform-specific. It is affected by the specific
+operating system and hardware platform used. The primary operating system used
+throughtout this book is Microsoft Windows, and for a good reason. Windows is
+the most popular reverse engineering environment, and not only because it is
+the most popular operating system in general.
+It's lovely opensource alternative Linux, for example, is far less relevant
+from a reversing standpoint precisely because the operating system and most of
+the software that runs on top of it are open-source.
+
+http://www.wiley.com/go/eeilam
+
+

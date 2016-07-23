@@ -168,6 +168,48 @@ Intel IA-32 architecture, on which every 32-bit PC is baesd.
 
 
 Compilers
+A compiler is a program that takes a source file and generates a corresponding
+machine code file. Depending on the high-level language, this machine code can
+either be a standard platform-specific object code that is decoded directly by
+the CPU or it can be encoded in a special platform-independent format called
+bytecode.
+Compilers of traditional programming languages such as C and C++ directly
+generate machine-readable object code from the textual source code. What this
+means is that the resulting object code, when translated to assembly language
+by a disassembler, is essentially a machine-generated assembly language
+program. Of course, it it not entirely machine-generated, becasue the software
+developer described to the compiler what needed to be done in the high-level
+language. But the details of how things are carried out are taken care of by
+the compiler, in the resulting object code. This is an important point because
+this code is not always easily understandable, even when compred to a
+human-made assembly language program--machines think differently than human
+beings.
+The biggest hurdle in deciphering compiler-generated code is the optimizations
+applied by most modern compilers. Compilers employ a variety techniques that
+minimize code size and improve execution performance. The problem is that the
+resulting optimized code is often counterintuitive and difficult to read. For
+instance, optimizing compilers often replace straightforward instructions with
+mathematically equivalent operations whose purpose can be far from obvious at
+first glance.
+
 Virtual Machines and Bytecodes
+Compilers for high-level languages such as Java generate a bytecode instead of
+an object code. Bytecodes are similar to object codes, except that they are
+usually decoded by a program, instead of a CPU. The idea is to have a compiler
+generate the bytecode, and to then use a program called a virtual machine to
+decode the bytecode and perform the operations described in it. Of course, the
+virtual machine itself must at some point convert the bytecode into standard
+object code that is compatible with the underlying CPU.
+Platform independence.
+
 Operating Systems
+An operating system is a program that manages the computer, including the
+hardware and software applications. An operating system takes care of many
+different tasks and can be seen as a kind of coordinator between the different
+elements in a computer. Operating systems are such a key element in a computer
+that any reverse must have a good understanding of what they do and how they
+work. As we'll see later on, many reversing techniques revolve around the
+operating system because the operating system serves as a gatekeeper that
+controls the link between applications and the outside world.
+
 

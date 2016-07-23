@@ -213,3 +213,34 @@ operating system because the operating system serves as a gatekeeper that
 controls the link between applications and the outside world.
 
 
+The Reversing Process
+For starters, I usually try to divide reversing sessions into two separate
+phases. The first, which is really a kind of large-scale observation of the
+earlier program, is called system-level reversing. System-level reversing
+techniques help determine the general structure of the program and sometimes
+even locate areas of interest within it. Once you establish a general
+understanding of the layout of the program and determine areas of special
+interest within it you can proceed to more in-depth work using code-level
+reversing techniques. Code-level techniques provide detailed information on a
+selected code chunk. 
+
+System-Level Reversing
+
+Code-Level Reversing
+
+The Tools:
+Reversing is all about the tools. 
+System-Monitoring Tools
+Disassemblers
+Debuggers
+Decompilers
+    A decompiler takes an executable binary file and attempts to produce
+    readable high-level language code from it. The idea is to try and revers
+    the compilation process, to obtain the original source file or something
+    similar to it.
+
+Interoperability
+Getting two programs to communicate and interoperate is never an easy task.
+Even within a single product developed by a single group of people, there are
+frequently interfacing issues caused when attempting to get individual
+componets to interoperate. 

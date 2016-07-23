@@ -26,3 +26,148 @@ the software that runs on top of it are open-source.
 http://www.wiley.com/go/eeilam
 
 
+Chapter 1 Foundations
+connection between low-level software and reverse engineering
+
+Reverse engineering is the process of extracting the knowledge or design
+blueprints from anything man-made.
+It is very similar to scientific research, in which a researcher is attempting
+to work out the "blueprint" of the atom or the human mind.
+"man made" vs "natural phenomenon"
+
+Jusk like software engineering, software reverse engineering is a purely
+virtual process, involving only a CPU, and the human mind.
+
+The only prerequisite is a strong curiosity and desire to learn.
+
+Software reverse engineering integrates several arts: code breaking, puzzle
+solving, programming, and logical analysis.
+
+Reversing Applications:
+Common applications of reverse engineering in the software world: two
+categories:
+1. securty-related
+2. software development-related.
+
+Reversing is related to several different aspects of computer security. For
+example, reversing has been employed in encryption research - a researcher
+reverse an encrytion product and evaluates the level of security it provides.
+
+Security-Related Reversing
+Malicious Software
+Reversing Cryptographic Algorithms
+
+Cryptographic algorithms can be roughly divided into two groups:restricted
+algorithms and key-based algorithms.
+Restricted algorithms are the kind some kis play with; writing a letter to a
+friend with each letter shifted several letters up or down. The secret in
+restricted algorithms is the algorithm itself.
+Restricted algorithms provide very poor security because reversing makes it
+very difficult to maintain the secrecy of the algorithm. Once reversers get
+their hand on the encrypting or decrypting program, it is only a matter of time
+before the algorithm is exposed. Because the algorithm is the secret, reversing
+can be seen as a way to break the algorithm
+
+On the other hand, in key-based algorithms, the scret is a key, some numeric
+value that is used by the algorithm to encrypt and decrypt the message. 
+In key-based algorithms users encrpt messages using keys that are kept private.
+The algorithms are usually made public, and the keys are kept private (and
+sometimes divulged to the legitmate recipient, depending on the algorithm).
+This almost makes reversing pointless because the algorithm is already known.
+Inorder to decipher a message encrypted with a key-based cipher, you would have
+to either:
+1. Obtain the key
+2. Try all possible combinations until you get to the key
+3. Look for a flaw in the algorithm that can be employed to extract the key or
+the original message.
+
+Digital Rights Management
+Auditing Program Binaries
+
+Reversing in Software Development
+Reversing can be incredibly useful to software developers. For instance,
+software developers can employ reversing techniques to discover how to
+interoperate with undocumented or partially documented software. In other
+cases, reversing can be used to determine the quality of third-party code, such
+as code libaray or even an operating system. Finally, it is sometimes possible
+to use reversing techniques for extracting valuable information from a
+competitor's product for the purpose of improving your own technologies.
+
+Achieving Interoperability with Proprietary Software
+Evaluating Software Quality and Robustness
+
+
+Low-Level Software
+Also known as system software is a generic name for the infrastruture of the
+software world.
+It encompasses development tools such as compilers, linkers, and debuggers,
+infrastructure software such as operating system, and low-level programming
+languages such as assembly language. It is the layer that isolates software
+developers and application programs from the physical hardware. The development
+tools isolate software developers from processor architectures and assembly
+languages, while operating systems isolate software developers from specific
+hardware devices and simplify the interaction with the end user by managing the
+display, the mouse, the keyboard, and so on.
+
+Nowadays, modern operating systems and development tools aim at isolating us
+from the details of the low-level world. This greatly simplifies the process of
+software development, but comes at the cost of reduced power and control over
+the system.
+
+In order to become an accomplished reverse engineer, you must develop a solid
+understanding of low-level software and low-level programming. That's because
+the low-level aspects of a program are often the only thing you have to work
+with as a reverser-high-level details are almost alwasy eliminated before a
+software program is shipped to customers. Mastering low-level software and the
+various software-engineering concepts is just as important as mastering the
+actual reversing techniques if one is to become an accomplished reverser.
+
+What exactly is low-level software? Computers and software are built layers
+upon layers. At the bottom layer, there are millions of microscopic transistors
+pulsating at incomprehensible speeds. At the top layer, there are some elegant
+looking graphics, a keyboard, and a mouse- the user experience. Most software
+developers use high-level languages that take easily understandable commands
+and execute them. For instance, commands that create a window, load a Web page,
+or display a picture are incredibly high-level, meaning that they translate to
+thoussands or even millions of commands in the lower layer.
+
+Reversing requires a solid understanding of these lower layers. Reversers must
+literally be aware of anything that comes between the program source code and
+the CPU.
+
+Assembly Language
+Assembly language is the lowest level in the software chain, which makes it
+incredibly suitable for reversing - nothing moves without it. If software
+performs an operation, it must be visible in the assembly language code.
+Assembly language is the language of reversing.
+Machine code (often called binary code, or object code). People sometimes make
+the mistake of thinking that machine code is "faster" or "lower-level" than
+assembly language. That is a misconception: machine code and assembly language
+are two different representations of the same thing. A CPU reads machine code,
+which is nothing but sequences of bits that contain a list of instructions for
+the CPU to perform. Assembly language is simply a textual representation of
+those bits-we name elements in these code sequences in order to make them
+human-readable. Insted of cryptic hexadecimal numbers we can look at textual
+instruction names such as MOV, XCHG, and so on.
+
+Each assembly language command is represented by a number, called the operation
+code, or opcode. Object code is essentially a sequence of opcodes and other
+numbers used in connection with the opcodes to perform operations.
+CPU constantly read object code from memory, decode it, and act based on the
+instructions embedded in it. When developers write code in assembly language,
+they use an assembler program to translate the textual assembly language code
+into binary code, which can be decoded by a CPU. In the other direction and
+more relevant to our narrative, a disassmbler does the exact opposite. It reads
+object code and generates the textual mapping of each instruction in it. This
+is relatively simple operation to perform bacause the textural seembly language
+is simply a different representation of the object code. Disassemblers are a
+key tool for reversers and are discussed in more depth later in this chaper.
+
+Intel IA-32 architecture, on which every 32-bit PC is baesd.
+
+
+
+Compilers
+Virtual Machines and Bytecodes
+Operating Systems
+

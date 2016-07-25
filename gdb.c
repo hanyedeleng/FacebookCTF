@@ -181,4 +181,35 @@ handle signan act
     nopass
 info signals
 
+Debugging Targets:
+target type param       connect to target machine, process, or file
+help tartget            display available targets
+attach param            connect to another process
+detach                  release target from GDB control
 
+Controlling GDB
+set param value         set one of GDB's internal parameters
+show param              display current setting of parameter
+
+Parameters understood by set and show:
+complaint limit         number of messages on unusual symbols
+confirm on/off          enable or disable cautionary queries
+editing on/off          control readline command-line editing
+height lpp              number of lines before pause in display
+language lang           Language for GDB expressions (auto, c or modula-2)
+listsize n              number of lines shown by list
+prompt str              use str as GDB prompt
+radix base              octal, decimal, or hex number representation
+verbose on/off          control messages when loading sysmbols
+width cpl               number of characters before line folded
+write on/off            Allow or forbid patching binary, core files (when reopened with exec or core)
+history ...             groups with the following options:
+h ...           
+h exp off/on            disable/enable readline history expansion
+h file filename         file for recording GDB command history
+h size size             number of commands kept in history list
+h save off/on           control use of external file for command history
+
+print ...               groups with the following options:
+p ...
+p address on/off        print memory addresses in stacks, values

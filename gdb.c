@@ -213,3 +213,53 @@ h save off/on           control use of external file for command history
 print ...               groups with the following options:
 p ...
 p address on/off        print memory addresses in stacks, values
+p array off/on          compact or attractive format for arrays
+p demangl on/off        source (demangled) or internal form for C++ symbols
+p asm-dem on/off        demangle C++ symbols in machine-instruction output
+p elements limit        number of array elements to display
+p object on/off         print C++ derived types for objects
+p pretty on/off         struct display: compact or indented
+p union on/off          display of union members
+v vtbl off/on           display of C++ virtual function tables
+
+show commands           show last 10 commands
+show commands n         show 10 commands around number n
+show commands +         show next 10 commands
+
+Working files
+file [file]             use file for both symbols and executable;
+                        with no arg, discard both
+core [file]             read file as cordump; or discard
+exec [file]             use file as executable only; or discard
+symbol [file]           use symbol table from file; or discard
+load file               dynamically link file and add its symbols
+add-sym file addr       read additional symbols from file,
+                            dynamically loaded at addr
+info files              display working files and targets in use
+path dirs               add dirs to front of path searched for 
+                            executable and symbol files
+show path               display executable and symbol file path
+info share              list names of shared libraries currently loaded
+
+
+Source Files
+dir names               add directory names to front of source path
+dir                     clear source path
+show dir                show current source path
+list                    show nect ten lines of source
+list -                  show previous ten lines
+list lines              display source surrounding lines, specified as
+  [file:] num           line number [in named file]
+  [file:]function       beginning of function [in named file]
+  +off                  off lines after last printed
+  -off                  off lines previous to last printed
+  *addree               line contaning address
+list f,l                from line f to line l
+info line num           show starting, ending addresses of compiled code for source line num
+info source             show name of current source file
+info sources            list all source files in use
+forw regex              search following source lines for regex
+rev regex               search preceding source lines for regex
+
+
+

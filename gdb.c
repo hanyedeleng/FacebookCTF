@@ -263,3 +263,99 @@ rev regex               search preceding source lines for regex
 
 
 
+Running
+gdb <program> [core dump]
+        start GDB (with optional core dump)
+gdb --args <program> <args...>
+        start GDB and pass arguments
+gdb --pid <pid>
+        start GDB and attach to process
+set args <args...>
+        set arguments to pass to program to be debugged
+run     run the program to be debugged
+kill    kill the running program
+
+
+Breakpoints
+break   <where>
+        set a new breakpoint
+delete <breakpoint#>
+        remove a breakpoint
+clear 
+        delete all breakpoints
+enable <breakpoint#>
+        enable a disabled breakpoint
+disable <breakpoint#>
+        disable a break point
+
+Watchpoints
+watch <where>
+        set a new watchpoint
+delete/enable/disable <watchpoint#>
+        like breakpoints
+
+where
+function_name
+        break/watch the named function
+line_number
+        break/watch the line number in the current source file.
+file:line_number
+        break/watch the line number in the named source file
+
+Conditions:
+break/watch <where> if <condition>
+        break/watch at the given location if the condition is met.
+        condition may be almost any C expression that evaluate to true or false
+condition <breakpoint#> <condition>
+        set/change the condition of an existing break- or watchpoint
+
+
+Examing the stack
+backtrace
+where
+        show call stack
+backtrace full
+where full
+        show call stack, also print the local variable in each frame
+frame <frame#>
+        select the stack frame to operate on.
+
+Stepping
+step
+        go to next instruction (source file), diving into function
+next
+        go to next instruction (source file) but don't dive into functions
+finish
+        continue until the current funcition returns.
+continue
+        continue normal execution
+
+
+Variable and memory
+print/format <what>
+        print content of variable/memory location/register
+display/format <what>
+        like print, but print the information after each stepping instruction
+undisplay <display#>
+        remove the display with the given number
+enable display <display#>
+disable display <display#>
+        En- or disable the display with the given number.
+x/nfu   <address>
+        print memory
+        n: how many units to print (default 1)
+        f: format character <like print>
+        u: unit.
+        unit is one of:
+            b: byte
+            h: half-word (two bytes)
+            w: word(four bytes)
+            g: giant word(eight bytes)
+
+
+Threads
+thread <thread#>
+        chose thread to operate on.
+
+set listsize
+

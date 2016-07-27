@@ -249,4 +249,102 @@ componets to interoperate.
 Chapter 2 Low-level Software
 Critical aspect of the field of reverse engineering
 
+Registers:
+IA-32 has eight generic registers: EAX, EBX, ECX, EDX, ESI, EDI, EBP, ESP.
 
+Notice that all of these names start with the letter E, which stands for
+extended. These register names have been carried over from the older 16-bit
+Intel architecture, where they had the exact same names, minus the Es (so that
+EAX was called AX, etc.). This is important because sometimes you'll run into
+32-bit code that references registers in that way: MOV AX, 0x1000, and so on.
+
+            Generic IA-32 Registers and Their Descriptions
+EAX, EBX, EDX               These are generic registers that can be used for
+                            any integer, Boolean, logical, or memory operation.
+
+ECX                         Generic, sometimes used as a counter by repetitive
+                            instructions that require counting.
+
+ESI/ED                      Generic, freqently used as source/destination
+                            pointers in instructions that copy memory (SI
+                            stands for source index, and DI stands for
+                            destination index).
+
+EBP                         Can be used as a generic register, but is mostly
+                            used as the stack base pointer. Using a base
+                            pointer in combination with the stack pointer
+                            creates a stack frame. A stack frame can be defined
+                            as the current fuction's stack zone, which resides
+                            between the stack pointer (ESP) and there base
+                            pointer (EBP). The base pointer usually points to
+                            the stack position right after the return address
+                            for the current fuction. Stack frames are used for
+                            gaining quick and convenient access to both local
+                            varable and to the prameters passed to the current
+                            function.
+
+ESP                         This is the CPUs stack pointer. The stack pointer
+                            stores the current position in the stack, so that
+                            anything pushed to the stack gets pushed below this
+                            address, and this register is updated accordingly.
+
+
+
+Instruction Format
+The basic layout of IA-32 instructions.
+Instructions usually consit of an opcode (operation code), and one or two
+operands. The opcode is an instruction name such as MOV, and the operands are
+the "parameters" that the instruction receives (some instructions have no
+operands). Naturally, each instruction requires different operands because
+they each perform a different task. Operands represent data that is handled by
+the specific instruction (just like parameters passed to a function), and in
+assembly language, data comes in three basic forms:
+Register name: the name of a general-purpose register to be read from or
+written to. In IA-32, this would be something like EAX, EBX, and so on.
+
+Immediate: A constant value embedded right in the code. This often indicates
+that there was some kind of hard-coded constant in the original program.
+
+Memory address: WHen an operand resides in RAM, its memory address is enclosed
+in brackets to indicates that it is a memory address.
+
+The general instrucion format looks like this:
+Instruction Name (opcode)       Destination Operand, Source Operand
+
+
+Operand             Description
+EAX                 Simply references EAX, either for reading or writing
+0x30004040          An immediate number embedded in the code (like a constant)
+[0x4000349e]        An immediate hard-coded memory address- this can be a
+                    global variable access
+
+Moving data
+Move takes two operands: a destination operand and a source operand, and simply
+moves data from the source to the destination. The destination operand can be
+either a memory address (either through an immediate or using a register) or a
+register. The source operand can be an immediate, register, or memory address,
+but note that only one of the operands can contain a memory address, and never
+both.
+Move    DestinationOperand, SourceOperand
+
+Arithmetic
+    ADD, SUB, MUL, DIV, IMUL, IDIV
+
+ADD Operand1, Operand2
+SUB Operand1, Operand2   Operand1-Operand2
+MUL Operand              Multoplies the unsigned operand by EAX and stores the
+                         result in a 64-bit value in EDX:EAX. (means the low
+                         least significant 32bits are stores in EAX and the
+                         high (most significant) 32 bits are stored in EDX.
+
+Comparing Operands
+CMP
+Operand1, Operand2
+
+Conditinal Branches
+Jcc     TargetCodeAddress
+
+Function calls
+CALL    FunctionAddress
+The CALL instruction calls a function, and the RET instruction returns to the
+caller.

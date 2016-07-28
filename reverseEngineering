@@ -375,3 +375,65 @@ JNE and JNZ are two different mnemonics for the same instruction - they
 actually share the same opcode in the machine language.
 
 
+A primer on compilers and compilation
+How software is created and built
+book: Engineering a compiler. Keith D. Copper
+      Advanced compiler design and implementation   steven s Muchnick
+
+Defining a compiler
+At its most basic level, a compiler is a program that takes one representation
+of a program as its input and produces a different representation of the same
+program. In most cases, the input representation is a text file containing code
+that complies with the specification of a certain high-level programming
+language. The output representation is usually a lower-level translation of the
+same program. Such lower-level representation is usually read by hardware or
+software, and rarely by people.
+
+compiler architecture
+The average compiler consists of three basic components. the front end is
+responsbile for deciphering the original program text and for ensuring that its
+syntax is correct and in accordance with the language's specifications. The
+potimizer improves the program in one way or another, while preserving its
+original meaning. Finally, the back end is reponsible for generating the
+platform-specific binary from the optimized code emitted by the optimizer.
+
+lexical analysis or scanning
+
+When you think about it, compilers are all about representations.
+Properly choosing the intermediate representation of code in a compiler is one
+of the compiler designer's most important design decisions.
+The layout heavily depends on what kind of source (high-level language) the
+compiler takes as input, and what kind of object code the compiler spews out.
+It is not uncommon for compilers to have two or more intermediate
+representations, one for each stage in the compilation process.
+
+Optimizer
+Being able to perform optimizations is one of the primary reasons that
+reversers should understand compilers (the other reason being to understand
+code-level optimizations performed in the back end).
+
+Optimizations that take place in the optimizer are not processor-specific and
+are generic improvements made to the original program's code without any
+relation to the specific platform to which the program is targeted. Regardless
+of the specific optimizations that take place, optimizers must always preserve
+the exact meaning of the original program and not change its behavior in any
+way.
+
+Code structure
+Redundancy Elimination
+
+Back end
+code generator
+
+Instruction selection
+Register allocation
+Instruction scheduling
+
+Execution Environments
+The execution environment is the component that actually runs programs. This
+can be a CPU or a software environment such as a virtual machine.
+
+Bytecodes
+The interesting thing about virtual machines is that they almost always have
+their own bytecode format.
+

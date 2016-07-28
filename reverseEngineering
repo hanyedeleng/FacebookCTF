@@ -348,3 +348,30 @@ Function calls
 CALL    FunctionAddress
 The CALL instruction calls a function, and the RET instruction returns to the
 caller.
+
+Function calls are implemented using two basic instructions in assembly
+language. The CALL instruction calls a function, and the RET instruction
+returns to the caller. The CALL instruction pushes the current instruction
+pointer onto the stack (so that it is later possible to return to the caller)
+and jumps to the specified address. The function's address can be specified
+just like any other operand, as an immediate, register, or memory address. The
+following is the general layout of the CALL instruction.
+
+CALL FunctionAddress
+
+When a function completes and needs to return to its caller, it usually
+invokes the RET instruction. RET pops the instruction pointer pushed to the
+stack by CALL and resumes execution from that address. Additionally, RET can be
+instructed to increment ESP by the specified number of bytes after popping the
+instruction pointer. This is needed for restoring ESP back to its original
+position as it was before the current function was called and before any
+parameters were pushed onto the stack. In some calling conventions the caller
+is responsible for adjusting ESP, which means that in such cases RET will be
+used without any operands, and that the caller will have to manually increment
+ESP by the number of bytes pushed as parameters. Detailed information on
+calling conventions is available in Appendix C.
+
+JNE and JNZ are two different mnemonics for the same instruction - they
+actually share the same opcode in the machine language.
+
+

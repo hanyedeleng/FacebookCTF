@@ -437,3 +437,15 @@ Bytecodes
 The interesting thing about virtual machines is that they almost always have
 their own bytecode format.
 
+Chapter 3
+Windows Fundamentals
+
+Operating system play a key role in reversing. That's because programs are
+tightly integrated with operating system, and plenty of information can be
+gathered by probing this interface. Moreover, the eventual bottom line of every
+program is in its communication with the outside world (the program receives
+user input and outputs data on the screen, writes to a file, and so on), which
+means that identifying and uderstanding the bridging points between application
+program and the operating system is critical.
+
+

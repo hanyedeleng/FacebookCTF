@@ -448,4 +448,46 @@ user input and outputs data on the screen, writes to a file, and so on), which
 means that identifying and uderstanding the bridging points between application
 program and the operating system is critical.
 
+Processes
+A process is a fundamental building block in windows. A process is many things,
+but it is predominantly an isolated memory address space. This address space
+can be used for running a program, and address spaces are created for every
+program in order to make sure that each program runs in its own address space.
+Inside a process's address space the system can load code modules, but in order
+to actually run a program, a process must have at least one thread running.
+
+Threads
+A thread is a primitive code execution unit. At any given moment, each
+processor in the system is running one thread, which effectively means that
+it's just running a piece of code; this can be either program or operating
+system code, it doesn't matter. The idea with threads is that instead of
+continuing to run a single piece of code until it is completed, windows can
+decide to interrupt a running thread at any given moment and switch to another
+thread. This process is at the very heart of windows' ability to achieve
+concurrency.
+
+Internally, a thread is nothing but a data structure that has a CONTEXT data
+structure telling the system the state of the processor when the thread last
+ran, combined with one or two memory blocks that are used for stack space. When
+you think about it, a thread is like a little vritual processor that has its
+own context and its own stack. The real physical processor swithes between
+multiple virtual processors and always starts execution from the thread's
+current context information and using the thread's stack.
+
+The reason a thread can have two stacks is that in windows threads alternate
+between running user-mode code and kernel-mode code.
+
+A program's executable often gives significant hints about a program's
+architecture.
+
+Windows executable file format: the Portable Executable(PE).
+
+Basic concepts:
+Probably the most important thing to hear in mind when dealing with executable
+files is that they're relocatable. This simply means that they could be loaded
+at a different virtual address each time they are loaded (but they can never be
+relocated after they have been loaded).
+
+DLL Dynamically linked libraries are key feature in a windows.
+
 

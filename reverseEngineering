@@ -560,3 +560,6 @@ www.sysinternals.com
 OllyDbg
 
 
+Generally speaking, reversing sessions start with data - we must figure out
+they key data structures that are managed by the code. 
+

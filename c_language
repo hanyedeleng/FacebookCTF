@@ -1,0 +1,13 @@
+write a C macro PRINT(x) which prints x
+#define PRINT(X) (#x)
+the # directive, also called 'Stringizing Operator'
+
+----------------------------
+int num;
+printf("Enter a number: ");
+scanf("%d", &num);
+----------------------------
+
+
+
+

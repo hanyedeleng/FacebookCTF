@@ -491,3 +491,56 @@ relocated after they have been loaded).
 DLL Dynamically linked libraries are key feature in a windows.
 
 
+
+Chater 4 Reversing tools
+There are no all-in-one reversing tools availble. This means that you need to
+create your own little toolkit that will include every type of tool that you
+might possibly need.
+
+Generally, I'd say that it's possible to start reversing without spending a
+dime on software, but some of these commercial products will certainly make
+your life easier.
+
+Generally speaking, there are two fundamental reversing methodologies: offline
+analysis and live analysis.
+
+
+Offline Code Analysis (Dead-Listing)
+Offline analysis of code means that you take a binary executable and use a
+disassembler or a decompiler to convert it into a human-readable form.
+Reversing is then performed by manually reading and analyzing parts of that
+output. Offline code analysis is a powerful approach because it provides a good
+outline of the program and makes it easy to search for specific functions that
+are interest.
+
+The downside of offline code analysis is usually that a better understanding of
+the code is required because you can't see the data that the program deals with
+and how it flows. You must guess what type of data the code deals with and how
+it flows based on the code. Offline analysis is typically a more advanced
+aprroach to reversing.
+
+There are some cases (particularly cracking-related) where offline code
+analysis is not possible. This typically happens when programs are "packed," so
+that the code is encrypted or compressed and is only unpacked in runtime. In
+such cases only live code analysis is possble.
+
+Live Code Analysis
+Live Analysis involves the same conversion of code into a human-readable form,
+but here you don't just statically read the converted code but instead run it
+in a debugger and observe its behavior on a live system.
+
+
+IDA Pro
+IDA (Interactive Disassembler) by DataRescue is an extremely powerful
+disassembler that supports a variety of processor architectures, including
+IA-32, IA-64 (Itanium), AMD64, and many others.
+
+ILDasm
+
+Debuggers:
+
+OllyDbg
+WinDbg
+PEBrowse Professional Interactive
+SoftICE
+

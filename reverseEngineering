@@ -544,3 +544,16 @@ WinDbg
 PEBrowse Professional Interactive
 SoftICE
 
+System-Monitoring Tools
+System-monitoring tools is a general category of tools that observe the various
+channels of I/O that exist between applications and the operating system. These
+are tools such as file access monitors that display every file operation (such
+as file creation, reading or writing to a file, and so on) made from every
+application on the system. This is done by hooking certain low-level components
+in the operating system and monitoring any relevant calls made from
+applications.
+
+inotify-tools
+
+www.sysinternals.com
+

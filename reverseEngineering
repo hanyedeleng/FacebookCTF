@@ -563,3 +563,9 @@ OllyDbg
 Generally speaking, reversing sessions start with data - we must figure out
 they key data structures that are managed by the code. 
 
+
+Chapter 6
+Deciphering File Formats
+The general process of deciphering program data.
+
+

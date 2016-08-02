@@ -1,0 +1,18 @@
+brew install ctags
+alias ctags="`brew --prefix`/bin/ctags"
+
+ctags -R *
+
+sublime install ctags:
+
+Ctrl+shift+p: package install    ctags
+
+ctrl+t ctrl+t  jump to function
+
+COMMANDS
+You can now use the following commands to jump through your files:
+rebuild_ctags ctrl+t ctrl+r
+navigate_to_definition ctrl+t ctrl+t or ctrl+alt+]
+jump_back ctrl+t ctrl+b or ctrl+alt+[
+jump_back to_last_modification ctrl+t ctrl+m
+

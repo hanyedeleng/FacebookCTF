@@ -568,4 +568,34 @@ Chapter 6
 Deciphering File Formats
 The general process of deciphering program data.
 
+Chapter 7
+Auditing Program Binaries
+A software program is only as weak as its weakest link. This is true both from
+a security standpoint and, to a lesser extent, from a reliability and
+robustness standpoint. You could expend considerable energy on development
+practices that focus on secure code and yet end up with a vulerable program
+just because of some third-party component your program uses.
+
+Defining the problem
+Security can be defined as having control of the flow of information on a
+system. This control means that your files stay inside your computer and out of
+the hands of nosy intruders, while malicious code stays outside of your
+computer.
+
+How we can scan binary executables for these types of security bugs.
+
+Vulnerabilities
+A vulnerability is essentially a bug or flaw in a program that compromises the
+security of the program and usually of the entire computer on which it is
+running. Basically, a vulnerability is a flaw in the program that might allow
+malicious intruders to take advantage of it. In most cases, vulnerabilities
+start with code that takes information from the outside world.
+
+The basic idea is simple-feed the program unexpected input (meaning input that
+the programmer didn't think it was ever going to be fed) and get it to stray
+from tis normal excution path. A crude way to exploit a vulnerability is to
+simply get the program to crash. This is typically the easiest objective
+because in many cases simply feeding the program exceptionally large random
+blocks od data does the trick.
+
 

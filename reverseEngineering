@@ -645,3 +645,12 @@ how do you determing the current stack address in the target program in order
 to point the return address to the right place?
 
 
+Intrinsic Implementations
+The C runtime library string-manipulation routines have historically been the
+reason for quite a few vulnerabilities. Most programmers nowadays know better
+than to leave such doors wide open, but it's still worthwhile to learn to
+identify calls to these functions while reversing. The problem is that some
+compilers treat functions as intrinsic, meaning that the compiler automatically
+inserts their implementation into the calling function (like an inline
+function) instead of calling the runtime library implementation.
+

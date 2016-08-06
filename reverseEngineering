@@ -654,3 +654,14 @@ compilers treat functions as intrinsic, meaning that the compiler automatically
 inserts their implementation into the calling function (like an inline
 function) instead of calling the runtime library implementation.
 
+Stack checking
+
+Nonexecutable Memory
+One other weapon that helps fight buffer overflows: nonexecutable memory.
+Certain processors provide support for defining memory pages as nonexecutable,
+which means that they can only be used for storing data, and that processor
+will not run code stored in them. The operating system can then mark stack and
+data pages as nonexecutable, which prevents an attacker from running code on
+them using a buffer overflow.
+
+

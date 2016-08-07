@@ -683,4 +683,26 @@ fit into the block. Heap blocks typically become a problem when the programmer
 miscalculates the number of bytes needed to hold a particular user supplied
 buffer in memory.
 
+String filters:
+Traditionally, a significant portion of overflow attacks have been
+string-related. The most common example has been use of the various runtime
+library string-manipulation routines for copying or processing strings in some
+way, while letting the routine determine how much data should be written. This
+is the common strcpy case demonstrated earlier, where an outsider is allowed to
+provide a string hat is copied into a fixed-sized internal buffer through
+strcpy. Because strcpy only stops copying when it encounters a NULL terminator,
+the caller can supply a string that would be too long for the target buffer,
+thus causing an overflow.
+
+What happens if the attacker's string is internally converted into Unicode (as
+most stings are in Wind32) before it reaches the vulnerable function? In such
+cases the attacker must feed the vulnerable program a sequence of ASCII
+character that would become a workable shellcode once converted into Unicode!
+This efectively means that between each attacker-provided opcode byte, the
+Unicode conversion process will add a zero byte. You may be surprised to learn
+that it's actually possible to write shellcodes that work after they're
+converted to Unicode. The process of developing working shellcodes in this
+hostile environment is discussed in obscou. What can I say, being an attacker
+isn't easy.
+
 

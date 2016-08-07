@@ -706,3 +706,10 @@ hostile environment is discussed in obscou. What can I say, being an attacker
 isn't easy.
 
 
+Integer Overflows
+Integer overflows are special type of overflow bug where incorrect treatment of
+integers can lead to numerial overflow which eventually results in a buffer
+overflow. 
+
+Type Conversion Errors
+

@@ -665,3 +665,22 @@ data pages as nonexecutable, which prevents an attacker from running code on
 them using a buffer overflow.
 
 
+Heap overflows
+Another type of overflow that can be used for taking control of a program of
+the other system is the malloc exploit or heap overflow [anonymous], [Kaempf],
+[jp]. The general idea is the same as a stack overflow: programs receive data
+of an unexpected length and copy it into a buffer that's too small to contain
+it. This causes the program to overwrite whatever it is that follows the heap
+block in memory. 
+
+It should be noted that heap overflows are usually less common than stack
+overflows because the sizes of heap blocks are almost always dynamically
+calculated to be large enough to fit the imcoming data. Unlike stack buffers,
+whose size must be predefined, heap buffers have a dynamic size (that's the
+whole point of a heap). Becuase of this, programmers rarely hard-code the size
+of a heap block when they have variably sized incoming data that they wish to
+fit into the block. Heap blocks typically become a problem when the programmer
+miscalculates the number of bytes needed to hold a particular user supplied
+buffer in memory.
+
+

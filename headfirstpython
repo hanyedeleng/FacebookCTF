@@ -1,0 +1,85 @@
+lists
+Modules of Functions
+Errors
+Data
+
+
+pyenv tools switch between python 2.7 and python 3
+
+chapter 1
+create simple python lists
+
+movies = ["The Holy Grail", "The Life of Brain", "The Meaning of Life"]
+
+(string, comma, square brackets, assign)
+
+Python variable identifiters don't have a type
+Identifiers are simply names that refer to a data object of some type.
+
+Lists are like arrays:
+when you create a list in python, the interpreter creates an array-like data
+structure in memory to hold your data, with your data items stacked from the
+bottom up. the first slot in the stack is numbered 0.
+
+movies[1]   access list data using the square bracket notation
+
+len(cast) return the length of a list
+
+listname.append("new element")
+listname.pop()
+listname.extend(["",""])
+listname.remove("")
+listname.insert(0, "")
+
+listname.insert(1, 1975)   insert year
+
+Iterate:
+for each_item in lists:
+    print(each_item)
+
+count = 0
+while count < len(movies):
+    print(movies[count])
+    count = count + 1
+
+you can use single quotes or double quotes with string
+escape \"
+
+Names can start with a letter character or an underscore, then include any
+number of letter characters, numbers, and/or underscores in the rest of the
+name. Strange characters (such as %$) are not allowed and you'll obviously want
+to use names that have meaning within the context of your code.
+
+python is case sensitive
+
+Store lists within lists
+Lists can hold data of mixed type.
+
+Check a list for a list:
+Each time you process an item in your list, you need to check to see if the
+item is another list.
+isinstance() lets you check if a specific identifier holds data of a specific
+type.
+
+names = ['michael', 'terry']
+isinstance(names, list)   true
+
+nums_names = len(names)
+isinstance(num_names, list)   false
+
+dir(__builtins__) to see a list of the build-in stuff that comes with python.
+
+help(input)
+help(isinstance)
+
+
+Don't repeat code; create a function
+def -- providing a name for your function and specifying either an empty or
+populated argument list within parentheses. 
+
+def function_name (arguments):
+    function code suite
+
+Recursion to the rescure!
+
+

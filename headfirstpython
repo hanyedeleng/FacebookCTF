@@ -83,3 +83,38 @@ def function_name (arguments):
 Recursion to the rescure!
 
 
+Chapter 2 Modules of functions
+Reusable code is great, but a shareable module is better.
+how to create, install, and distribute your own shareable modules.
+
+Modules let you orgnize your code for optimal sharing
+The distribution utilites let you share your modules with the world
+
+Turn your function into a module
+A module is simply a text file that contains Python code. The main reuirement
+is that the name of the file needs to end in .py: the Python extension. To turn
+your function into a module, save your code into an appropriately named file:
+
+Go ahead and create a text file called nester.py that contains your function
+code from the end of chapter 1.
+
+The Python Package Index (or PyPI for short) provides a centralized repository
+for third-party Python modules on the Internet. When you are ready, you'll be
+PyPI to publish your module and make your code available for use by others. And
+your module is ready, but for one important addition.
+
+Comment your code
+"""
+comment
+"""
+the triple quote for multiple-line comments.
+
+# for one line comment
+
+import sys
+sys.path()
+
+impirt nester
+or from nester import print_lol
+namespace different
+

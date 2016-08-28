@@ -364,3 +364,42 @@ Python's pickle module uses a custom binary format(know as its protocol). As
 you can see, viewing this format in your editor looks dicidedly weird.
 
 
+chapter 5 comprehending data
+To work effectively with your data, you often have to manipulate and transform
+it into a common format to allow for efficient processing, sorting, and
+storage.
+
+sorted(listname)
+
+list comprehension:
+clean_mikey = [sanitize(each_t) for each_t in mikey]
+There is no need to specify the use of the append() method as this action is
+implied within the list comprehension.
+
+>>> mins = [1, 2, 3]
+>>> secs = [m * 60 for m in mins] >>> secs
+[60, 120, 180]
+
+If you have to perform a transformation on every item in a list, using a list
+comprehension is the way to go, especially when the transformation is easily
+specified on one time. List iterations can do everything that list
+comprehension can, they just take more code, but iterations do provide more
+flexibility should you need it.
+
+if a not in as:
+
+the Python set() data structure.
+distances = set(james)
+
+list vs set:
+
+the sort() method changes the ordering of lists in-place
+The sorted() BIF sorts most any data structure by providing copied sorting.
+Pass reverse=True to either sort() or sorted() to arrange your data in
+descending order.
+
+To Access more than one data item from a list, use a slice. For example:
+my_list[3:6]
+create a set using the set() factory function.
+
+

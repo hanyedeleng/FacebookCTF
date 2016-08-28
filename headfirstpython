@@ -235,3 +235,132 @@ except IOError:
 python seek() method can be used to "rewind" a file to the beginning.
 
 
+Chapter 4 Saving data to files
+Taking your memory-based data and storing it to disk is what persistence is all
+about.
+
+When that's done, you'll have something worth saving
+
+.strip() removes unwanted whitespace from a string
+
+if elif
+
+Open your file in write mode
+out = open("data.out", "w")
+print("Norwegian Blues stun easily.", file=out)
+out.close()
+
+a append
+w+ writing and reading
+
+Files are left open after an exception!
+
+If you need to handle an IPError before a file is closed, your written data
+might become corrupted and there's no way of telling until after it has
+happened.
+
+finally:
+
+No matter what, the code in the finally suite always runs.
+
+This is a big improvement, because you're now ensuring that files are closed
+properly.
+
+Strings in Python is immutable, which means that once a string is created, it
+cann't be changed.
+
+What actually happens is that invoking the strip() method on the line_spoken
+string creates a new string with leading and trailing whitespace removed. The
+new string is then assigned to line_spoken, replacing the data that was
+reffered to before. In effect, it is as if changed line_spoken, when you've
+actally completely replaced the data it refers to.
+
+Python's built-in memory management technology reclaims the RAM it was using
+and makes it available to your program. That is unless some other Python data
+object is also referring to the string.
+
+It is conceivable that another data object is referring to the string referred
+to by line_spoken. For example, let’s assume you have some code that contains
+two variables that refer to the same string, namely “Flying Circus.” You then
+decide that one of
+the variables needs to be in all UPPERCASE, so you invoke the upper() method on
+it. The Python interperter takes a copy of the string, converts it to
+uppercase, and returns it to you. You can then assign the uppercase data back
+to the variable that used to refer to the original data.
+
+So Python variables don't actually contain the data sssigned to them. Python
+variable contain a reference to a data object. The data object contains the
+data
+
+Immutable data types in python"
+string, tuple, and all of the number types
+
+If you try to change an immutable value, Python raises a TypeError exception.
+
+locals() BIF returns a collection of names defines in the current scope.
+if 'data' in locals():
+    data.close()
+
+
+When an exception is raised and handled by your except suite, the Python
+interpreter passes an exception object into the suite. A small change makes
+this exception object available to your code as an identifier:
+
+except IOError as err:
+    print('File error: ' + str(err))
+
+Use with to work with files
+The with statement, when used with files, can dramatically reduce the amount of
+code you have to write, because it negates the need to include a finally suite
+to handle the closing of a potentially opened data file.
+
+
+try:
+    data = open('its.txt', "w") print("It's...", file=data)
+except IOError as err:
+    print('File error: ' + str(err))
+finally:
+    if 'data' in locals():
+        data.close()
+
+== 
+
+try:
+    with open('its.txt', "w") as data:
+        print("It's ...", file = data)
+except IOError as err:
+    print('File error: ' + str(err))
+
+the use of "with" negates the need for the "finally" suite.
+
+with open('man_data.txt') as mdf:
+    print(mdf.readline())
+!!!! Note: no need to close your file, because "with" does that for you.
+
+
+Pikle your data:
+Python ships with a standard library called pickle, which can save and load
+almost any Python data object, including lists.
+
+save with dump and restore with load
+Using pickle is straigthforward: import the required module, then use dump() to
+save your data and, some time later, load() to restore it. The only requirement
+when working with pickled files is that they have to be opened in binary access
+mode:
+
+import pickle 
+    ...
+with open('mydata.pickle', 'wb') as mysavedata: 
+    pickle.dump([1, 2, 'three'], mysavedata) 
+    ...
+with open('mydata.pickle', 'rb') as myrestoredata: 
+    a_list = pickle.load(myrestoredata)
+
+print(a_list)
+
+
+Recall that Python, not you, is picking your data. To do so efficiently,
+Python's pickle module uses a custom binary format(know as its protocol). As
+you can see, viewing this format in your editor looks dicidedly weird.
+
+

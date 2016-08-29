@@ -402,4 +402,36 @@ To Access more than one data item from a list, use a slice. For example:
 my_list[3:6]
 create a set using the set() factory function.
 
+chapter 6 Bunding code with data
+It's important to match your data structure choice to your data.
+
+Use class to define classes:
+Python uses class to create objects. Every defined class has a special method
+called __init__(), which allows you to control how objects are initialized.
+
+Methods within your class are defined in much the same way as functions, that
+is, using def. Here's the basic form:
+
+In fact, not only does the __init__() method require self as its first
+argument, but so deos every other method defined within your class.
+
+Inherit from Python's built-in list
+Python's class lets you create a custom class from sratch, just like you did
+with your Athlete class. However, class also lets you create a class by
+inheriting from any other existing class, including Python's built-in data
+structure classes that provide you with list, set, and dict. Such classes are
+referred to as subclasses.
+
+What's really nice is that when you inherit from ans existing class (such as
+list), you are given all of the existing functionality for free.
+
+Sometimes writing everything from scratch is not the best design decison.
+
+
+class NameList(list):
+    def __init__(self, a_name):
+        list.__init__([])
+        self.name = a_name
+
+
 

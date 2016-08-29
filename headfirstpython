@@ -434,4 +434,39 @@ class NameList(list):
         self.name = a_name
 
 
+Chapter 7 web development
+putting it all together
+
+Soonner or later, you'll want to share your app with lots of people. Create a
+webapp instead. Using Python for web development is a breeze.
+
+You can put your program on the Web
+No matter what you do on the web, it's all about requests and responses. A web
+request is sent from a web brower to a web server as the result of some user
+interaction. On the web server, a web response (or reply) is formulated and
+sent back to the web browser. The entire process can be summarized in five
+steps.
+
+Obviously, if all the server has to do is locate static content and sent it
+back to the browser, the substeps aren't too taxing, because it's all just file
+I/O.
+
+However, when dynamic content must be generated, the substeps involve the web
+server locating the program to execute, excuting the located program, and then
+capturing the output from the program as the web response...which is then sent
+back to the waiting web browser.
+
+This dynamic content generation process has been standardized since the early
+days of the web ans is known as the common gateway interface(CGI). Programs
+that conform to the standard are often referred to as CGI scripts.
+
+Design your webapp with MVC
+Model-View-Controller pattern, which helps you segment your webapp's code into
+easily manageable functional chunks (or components):
+
+The Model: The code to store (and somtimes process) your webapp's data
+The View: The code to format and display your webapp's user interface(s)
+The Controller: The code to glue your webapp together and provide its business
+logic
+
 
